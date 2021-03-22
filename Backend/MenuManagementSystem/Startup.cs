@@ -1,7 +1,9 @@
+using MenuManagementSystem.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +28,9 @@ namespace MenuManagementSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<MenuContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString(nameof(MenuContext))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
