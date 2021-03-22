@@ -14,5 +14,6 @@ namespace MenuManagementSystem.Data.Context
         }
 
         public DbSet<Cook> Cooks { get; set; }
+        public DbSet<Meal> Meals { get; set; }
     }
 }
