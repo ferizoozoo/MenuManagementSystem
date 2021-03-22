@@ -1,4 +1,6 @@
-﻿using MenuManagementSystem.Models;
+﻿using MenuManagementSystem.Data.Context;
+using MenuManagementSystem.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +10,27 @@ namespace MenuManagementSystem.Data.Repositories
 {
     public class CookRepository : IRepository<Cook>
     {
-        public Task<IEnumerable<Cook>> GetAll()
+        private readonly MenuContext _context;
+
+        public CookRepository(MenuContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<Cook> GetById(int id)
+        public async Task<IEnumerable<Cook>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _context.Cooks.ToListAsync();
         }
 
-        public Task Insert(Cook entity)
+        public async Task<Cook> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Cooks.FirstOrDefaultAsync(cook => cook.Id == id);
+        }
+
+        public async Task Insert(Cook cook)
+        {
+            _context.Cooks.Add(cook);
+            await _context.SaveChangesAsync();
         }
     }
 }

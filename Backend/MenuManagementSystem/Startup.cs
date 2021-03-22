@@ -1,4 +1,5 @@
 using MenuManagementSystem.Data.Context;
+using MenuManagementSystem.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +32,8 @@ namespace MenuManagementSystem
 
             services.AddDbContext<MenuContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(nameof(MenuContext))));
+
+            services.AddScoped<CookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
