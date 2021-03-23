@@ -26,7 +26,7 @@ namespace MenuManagementSystem.Controllers
             return await _repository.GetAll();
         }
 
-        [HttpGet("{:id}")]
+        [HttpGet("{id}")]
         public async Task<Meal> GetById([FromRoute] int id)
         {
             return await _repository.GetById(id);

@@ -19,17 +19,17 @@ namespace MenuManagementSystem.Data.Repositories
 
         public async Task<IEnumerable<Cook>> GetAll()
         {
-            return await _context.Cooks.ToListAsync();
+            return await _context.Set<Cook>().ToListAsync();
         }
 
         public async Task<Cook> GetById(int id)
         {
-            return await _context.Cooks.FirstOrDefaultAsync(cook => cook.Id == id);
+            return await _context.Set<Cook>().FirstOrDefaultAsync(cook => cook.CookId == id);
         }
 
         public async Task Insert(Cook cook)
         {
-            _context.Cooks.Add(cook);
+            _context.Set<Cook>().Add(cook);
             await _context.SaveChangesAsync();
         }
     }

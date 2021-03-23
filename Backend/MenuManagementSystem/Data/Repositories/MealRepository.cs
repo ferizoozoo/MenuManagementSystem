@@ -24,7 +24,7 @@ namespace MenuManagementSystem.Data.Repositories
 
         public async Task<Meal> GetById(int id)
         {
-            return await _context.Meals.FirstOrDefaultAsync(meal => meal.Id == id);
+            return await _context.Meals.FirstOrDefaultAsync(meal => meal.MealId == id);
         }
 
         public async Task Insert(Meal meal)

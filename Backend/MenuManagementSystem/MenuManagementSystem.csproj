@@ -5,8 +5,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20210323101527_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210323101527_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20210323101842_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210323101842_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20210323103247_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210323103247_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20210323171007_AddOneToOneRelations.cs" />
+    <Compile Remove="Migrations\20210323171007_AddOneToOneRelations.Designer.cs" />
+    <Compile Remove="Migrations\20210323171733_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210323171733_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20210323190242_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210323190242_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 

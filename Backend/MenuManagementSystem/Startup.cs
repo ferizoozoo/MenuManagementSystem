@@ -1,5 +1,6 @@
 using MenuManagementSystem.Data.Context;
 using MenuManagementSystem.Data.Repositories;
+using MenuManagementSystem.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,10 +32,11 @@ namespace MenuManagementSystem
             services.AddControllers();
 
             services.AddDbContext<MenuContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString(nameof(MenuContext))));
+                options.UseSqlite(Configuration.GetConnectionString(nameof(MenuContext)))
+            );
 
-            services.AddScoped<CookRepository>();
-            services.AddScoped<MealRepository>();
+            services.AddScoped<IRepository<Cook>, CookRepository>();
+            services.AddScoped<IRepository<Meal>, MealRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

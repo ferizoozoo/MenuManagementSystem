@@ -7,7 +7,7 @@ namespace MenuManagementSystem.Models
 {
     public class Cook
     {
-        public int Id { get; set; }
+        public int CookId { get; set; }
         public string FullName { get; set; }
     }
 }

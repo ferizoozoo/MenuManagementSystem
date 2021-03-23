@@ -7,9 +7,10 @@ namespace MenuManagementSystem.Models
 {
     public class Meal
     {
-        public int Id { get; set; }
+        public int MealId { get; set; }
         public string Name { get; set; }
         public DateTime MealTime { get; set; }
+
         public Cook Cook { get; set; }
     }
 }
