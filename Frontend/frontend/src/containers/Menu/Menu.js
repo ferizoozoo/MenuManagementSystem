@@ -5,7 +5,7 @@ class Menu extends Component {
   render() {
     return (
       <>
-        <div className="row d-flex justify-content-center">
+        <div className="row d-flex justify-content-center mt-3">
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
@@ -24,6 +24,20 @@ class Menu extends Component {
                 <p className="card-text">Show list of meals</p>
                 <Link className="btn btn-primary" to="/meals">
                   Meals
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row justify-content-center mt-3">
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Add Menu Items</h5>
+                <p className="card-text">Add cooks and meals to the menu</p>
+                <Link className="btn btn-primary" to="/add">
+                  Add Menu Items
                 </Link>
               </div>
             </div>
