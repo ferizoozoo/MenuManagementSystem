@@ -34,10 +34,22 @@ class Menu extends Component {
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">Add Menu Items</h5>
-                <p className="card-text">Add cooks and meals to the menu</p>
-                <Link className="btn btn-primary" to="/add">
-                  Add Menu Items
+                <h5 className="card-title">Add Cooks</h5>
+                <p className="card-text">Add cooks to the restaurant</p>
+                <Link className="btn btn-primary" to="/cooks/new">
+                  Add Cooks
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Add Meals</h5>
+                <p className="card-text">Add meals to the menu</p>
+                <Link className="btn btn-primary" to="/meals/new">
+                  Add Meals
                 </Link>
               </div>
             </div>
