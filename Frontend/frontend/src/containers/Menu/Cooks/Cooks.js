@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import { getCooks } from "../../../services/CooksService";
 
 class Cooks extends Component {
   state = {
     cooks: [{ cookId: 1, fullName: "ferizoozoo" }],
+  };
+
+  componentDidMount = () => {
+    //const cooks = getCooks();
+    //this.setState({cooks});
   };
 
   render() {

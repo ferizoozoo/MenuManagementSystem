@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { getMeals } from "../../../services/MealsService";
 
 class Meals extends Component {
   state = {
@@ -10,6 +11,11 @@ class Meals extends Component {
         cook: "ferizoozoo",
       },
     ],
+  };
+
+  componentDidMount = () => {
+    //const meals = getMeals();
+    //this.setState({meals});
   };
 
   render() {
